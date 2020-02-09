@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainScreenPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreen">
+   <children>
+      <TableView fx:id="table" layoutY="178.0" prefHeight="590.0" prefWidth="1200.0">
+        <columns>
+          <TableColumn fx:id="competitorNameF" onEditCommit="#onEditChangeC" prefWidth="220.0" text="Competitor" />
+          <TableColumn fx:id="teamNameF" minWidth="0.0" onEditCommit="#onEditChangeT" prefWidth="140.0" text="Team" />
+            <TableColumn fx:id="divisionF" onEditCommit="#onEditChangeD" prefWidth="115.0" text="Divison" />
+            <TableColumn fx:id="bodyWeightF" onEditCommit="#onEditChangeB" prefWidth="115.0" text="Bwt (lbs.)" />
+            <TableColumn fx:id="weightClassF" onEditCommit="#onEditChangeW" prefWidth="115.0" text="WtCls (lbs.)" />
+            <TableColumn fx:id="benchPressF" onEditCommit="#onEditChangeBP" prefWidth="130.0" text="Bench Press" />
+            <TableColumn fx:id="squatF" onEditCommit="#onEditChangeSq" prefWidth="130.0" text="Squat" />
+            <TableColumn fx:id="deadliftF" onEditCommit="#onEditChangeDL" prefWidth="130.0" text="Deadlift" />
+            <TableColumn fx:id="checksBPLift" onEditCommit="#onEditChangeBPC" prefWidth="36.0" text="BP" />
+            <TableColumn fx:id="checksSLift" onEditCommit="#onEditChangeSC" prefWidth="36.0" text="S" />
+            <TableColumn fx:id="checksDLlift" onEditCommit="#onEditChangeDLC" prefWidth="36.0" text="DL" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="liftType" layoutY="75.0" prefHeight="47.0" prefWidth="175.0" />
+      <TextField fx:id="weightInput" alignment="CENTER" layoutX="174.0" layoutY="75.0" prefHeight="47.0" prefWidth="158.0" style="-fx-border-color: Black;">
+         <font>
+            <Font name="Marlett" size="15.0" />
+         </font></TextField>
+      <Button fx:id="goodLift" layoutX="398.0" layoutY="75.0" mnemonicParsing="false" onAction="#goodLiftClicked" prefHeight="47.0" prefWidth="79.0" style="-fx-background-color: Green;" text="Good Lift">
+         <font>
+            <Font name="Marlett" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="badLift" layoutX="477.0" layoutY="75.0" mnemonicParsing="false" onAction="#badLiftClicked" prefHeight="47.0" prefWidth="79.0" style="-fx-background-color: Red;" text="Bad Lift">
+         <font>
+            <Font name="Marlett" size="14.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="332.0" layoutY="75.0" prefHeight="47.0" prefWidth="67.0" style="-fx-border-color: Black;" text="KG">
+         <font>
+            <Font name="Marlett" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="compIns" layoutX="28.0" layoutY="768.0" prefHeight="32.0" prefWidth="175.0" promptText="Competitior" />
+      <TextField fx:id="teamIns" layoutX="214.0" layoutY="768.0" prefHeight="32.0" prefWidth="175.0" promptText="Team" />
+      <TextField fx:id="divIns" layoutX="398.0" layoutY="768.0" prefHeight="32.0" prefWidth="175.0" promptText="Division" />
+      <TextField fx:id="bdyWghtIns" layoutX="594.0" layoutY="768.0" prefHeight="32.0" prefWidth="89.0" promptText="Body Weight" />
+      <TextField fx:id="weightClssIns" layoutX="703.0" layoutY="768.0" prefHeight="32.0" prefWidth="89.0" promptText="Weight Class" />
+      <Button fx:id="addButton" layoutX="810.0" layoutY="768.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="32.0" prefWidth="67.0" text="Add">
+         <font>
+            <Font name="Marlett" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteButton" layoutX="908.0" layoutY="768.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="32.0" prefWidth="67.0" text="Delete">
+         <font>
+            <Font name="Marlett" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="competitorNameDisplay" alignment="CENTER" prefHeight="40.0" prefWidth="555.0" style="-fx-border-color: Black;">
+         <font>
+            <Font name="Marlett" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="compDivDisplay" alignment="CENTER" layoutX="174.0" layoutY="40.0" prefHeight="35.0" prefWidth="158.0" style="-fx-border-color: Black;">
+         <font>
+            <Font name="Marlett" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="compBWDisplay" alignment="CENTER" layoutX="332.0" layoutY="40.0" prefHeight="35.0" prefWidth="89.0" style="-fx-border-color: Black;">
+         <font>
+            <Font name="Marlett" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="421.0" layoutY="40.0" prefHeight="35.0" prefWidth="50.0" style="-fx-border-color: Black;" text="Lb">
+         <font>
+            <Font name="Marlett" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="compTNDisplay" alignment="CENTER" layoutY="40.0" prefHeight="35.0" prefWidth="175.0" style="-fx-border-color: Black;">
+         <font>
+            <Font name="Marlett" size="15.0" />
+         </font>
+      </Label>
+      <HBox fx:id="weightsGoHere" alignment="CENTER_LEFT" layoutX="592.0" prefHeight="178.0" prefWidth="544.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
